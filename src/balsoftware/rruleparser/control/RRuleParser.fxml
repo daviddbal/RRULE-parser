@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root fx:id="rruleParserVBox" prefHeight="495.0" prefWidth="500.0" spacing="7.0" type="javafx.scene.layout.VBox" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="5.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+   <children>
+      <VBox>
+         <children>
+            <Label fx:id="dtstartLabel" text="DTSTART:" />
+            <TextField fx:id="dtstartTextField" promptText="enter DTSTART text here" />
+         </children>
+      </VBox>
+      <VBox>
+         <children>
+            <Label fx:id="rruleLabel" contentDisplay="CENTER" text="RRULE:" />
+            <TextField fx:id="rruleTextField" promptText="enter RRULE text here" text="RRULE:FREQ=WEEKLY;BYDAY=MO,WE,FR" />
+         </children>
+      </VBox>
+      <VBox>
+         <children>
+            <Label fx:id="recurrenceLabel" text="Max recurrences:" />
+            <TextField fx:id="recurrenceTextField" text="50" />
+         </children>
+      </VBox>
+      <VBox>
+         <children>
+            <Label text="Recurrence Set Output:" />
+         </children>
+      </VBox>
+      <TextArea fx:id="recurrenceSetTextArea" editable="false" prefHeight="352.0" prefWidth="368.0" promptText="no output to display" />
+   </children>
+</fx:root>
