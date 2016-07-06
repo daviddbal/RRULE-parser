@@ -2,7 +2,6 @@ package balsoftware.rruleparser;
 	
 import balsoftware.rruleparser.control.RRuleParserPane;
 import javafx.application.Application;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -41,11 +40,13 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = new RRuleParserPane();
+		    RRuleParserPane root = new RRuleParserPane();
 			Scene scene = new Scene(root,500,495);
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("RRULE Parser, by David Bal");
+			primaryStage.setTitle("iCalendar RRULE Parser, by David Bal");
 			primaryStage.show();
+			root.getMyHyperlink().setOnAction((a -> getHostServices().showDocument(root.getMyHyperlink().getText())));
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}        
