@@ -31,7 +31,7 @@
       </VBox>
       <Label layoutX="5.0" layoutY="157.0" text="Recurrence Set Output:" />
       <TextArea fx:id="recurrenceSetTextArea" editable="false" layoutX="10.0" layoutY="180.0" promptText="no output to display" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="170.0" />
-      <Hyperlink fx:id="myHyperlink" onAction="#handleHyperlink" text="balsoftware.org" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="15.0" />
+      <Hyperlink fx:id="myHyperlink" onAction="#handleHyperlink" text="balsoftware.net" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="15.0" />
    </children>
    <padding>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
