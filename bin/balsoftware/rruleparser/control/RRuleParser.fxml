@@ -8,34 +8,32 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root fx:id="rruleParserVBox" prefHeight="495.0" prefWidth="500.0" spacing="7.0" type="javafx.scene.layout.VBox" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="5.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
-   <padding>
-      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-   </padding>
+
+<fx:root prefHeight="500.0" prefWidth="500.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <VBox>
+      <VBox layoutX="10.0" layoutY="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Label fx:id="dtstartLabel" text="DTSTART:" />
             <TextField fx:id="dtstartTextField" promptText="enter DTSTART text here" />
          </children>
       </VBox>
-      <VBox>
+      <VBox layoutX="10.0" layoutY="59.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Label fx:id="rruleLabel" contentDisplay="CENTER" text="RRULE:" />
             <TextField fx:id="rruleTextField" promptText="enter RRULE text here" text="RRULE:FREQ=WEEKLY;BYDAY=MO,WE,FR" />
          </children>
       </VBox>
-      <VBox>
+      <VBox layoutX="10.0" layoutY="108.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <Label fx:id="recurrenceLabel" text="Max recurrences:" />
             <TextField fx:id="recurrenceTextField" text="50" />
          </children>
       </VBox>
-      <VBox>
-         <children>
-            <Label text="Recurrence Set Output:" />
-         </children>
-      </VBox>
-      <TextArea fx:id="recurrenceSetTextArea" editable="false" prefHeight="352.0" prefWidth="368.0" promptText="no output to display" />
+      <Label layoutX="5.0" layoutY="157.0" text="Recurrence Set Output:" />
+      <TextArea fx:id="recurrenceSetTextArea" editable="false" layoutX="10.0" layoutY="180.0" promptText="no output to display" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="170.0" />
+      <Hyperlink fx:id="myHyperlink" onAction="#handleHyperlink" text="dbal@balsoftware.org" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="15.0" />
    </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
 </fx:root>
