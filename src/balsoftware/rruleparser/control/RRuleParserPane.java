@@ -70,6 +70,8 @@ public class RRuleParserPane extends AnchorPane
     private ObjectProperty<RecurrenceRule> rruleProperty = new SimpleObjectProperty<>();
     private ObjectProperty<DateTimeStart> dtstartProperty = new SimpleObjectProperty<>();
     
+    final private static int MAX_ALLOWED = 100_000;
+    
     @FXML private Hyperlink myHyperlink;
     public Hyperlink getMyHyperlink() { return myHyperlink; }
     
@@ -100,24 +102,29 @@ public class RRuleParserPane extends AnchorPane
         recurrenceTextField.textProperty().addListener((obs, oldValue, newValue) ->
         {
             boolean isNumber = recurrenceTextField.getText().matches("[0-9]+");
-            final Integer max;
-            if (isNumber)
+            final int max = isNumber ? Integer.parseInt(newValue) : 0;
+            boolean isTooBig = max > MAX_ALLOWED;
+            if (isNumber && ! isTooBig)
             {
                 recurrenceLabel.setText(originalRecurrenceLabel);
                 recurrenceLabel.setStyle("-fx-text-fill: black");
-                max = Integer.parseInt(newValue);
             } else if (newValue.isEmpty())
             {
                 recurrenceLabel.setText(originalRecurrenceLabel);
                 recurrenceLabel.setStyle("-fx-text-fill: black");
-                max = null;
             } else
             {
                 recurrenceLabel.setText(originalRecurrenceLabel + " INVALID");
                 recurrenceLabel.setStyle("-fx-text-fill: red");
-                max = null;
             }
-            recurrenceMaxProperty.set(max);
+            
+            if (! isTooBig)
+            {
+                recurrenceMaxProperty.set(max);                
+            } else
+            {
+                recurrenceMaxProperty.set(null);
+            }
         });
         
         rruleTextField.textProperty().addListener((obs, oldValue, newValue) ->
@@ -159,7 +166,7 @@ public class RRuleParserPane extends AnchorPane
         String text = "iCalendar RRule Parser Information" + System.lineSeparator()
                 + System.lineSeparator() +
                 "This software parses an iCalendar RRULE string into a series of date/times." + System.lineSeparator() +
-                "This software uses iCalendarFX, an iCalendar API utilizing JavaFX and Java 8," + System.lineSeparator() +
+                "It uses iCalendarFX, an iCalendar API utilizing JavaFX and Java 8," + System.lineSeparator() +
                 "also written by David Bal" + System.lineSeparator() +
                 "See RFC 5545 iCalendar 3.3.10 for details" + System.lineSeparator()
                 + System.lineSeparator() + 
