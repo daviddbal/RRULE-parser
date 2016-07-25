@@ -75,6 +75,40 @@ public class RRuleParserPane extends AnchorPane
     @FXML private Hyperlink myHyperlink;
     public Hyperlink getMyHyperlink() { return myHyperlink; }
     
+    final static private String INFO = "iCalendar RRule Parser Information" + System.lineSeparator()
+    + System.lineSeparator() +
+    "This software parses an iCalendar RRULE string into a series of date/times." + System.lineSeparator() +
+    "It uses iCalendarFX, an iCalendar API utilizing JavaFX and Java 8," + System.lineSeparator() +
+    "also written by David Bal" + System.lineSeparator() +
+    "See RFC 5545 iCalendar 3.3.10 for details" + System.lineSeparator()
+    + System.lineSeparator() + 
+    "Please direct any questions or comments to David Bal at dbal@balsoftware.org" + System.lineSeparator()
+    + System.lineSeparator() + 
+    " * Copyright (c) 2016, David Bal" + System.lineSeparator() + 
+    " * All rights reserved." + System.lineSeparator() + 
+    " * " + System.lineSeparator() + 
+    " * Redistribution and use in source and binary forms, with or without" + System.lineSeparator() + 
+    " * modification, are permitted provided that the following conditions are met:" + System.lineSeparator() + 
+    " *     * Redistributions of source code must retain the above copyright" + System.lineSeparator() + 
+    " *       notice, this list of conditions and the following disclaimer." + System.lineSeparator() + 
+    " *     * Redistributions in binary form must reproduce the above copyright" + System.lineSeparator() + 
+    " *       notice, this list of conditions and the following disclaimer in the" + System.lineSeparator() + 
+    " *       documentation and/or other materials provided with the distribution." + System.lineSeparator() + 
+    " *     * Neither the name of the organization nor the" + System.lineSeparator() + 
+    " *       names of its contributors may be used to endorse or promote products" + System.lineSeparator() + 
+    " *       derived from this software without specific prior written permission." + System.lineSeparator() + 
+    " * " + System.lineSeparator() + 
+    " * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND" + System.lineSeparator() + 
+    " * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED" + System.lineSeparator() + 
+    " * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE" + System.lineSeparator() + 
+    " * DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY" + System.lineSeparator() + 
+    " * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES" + System.lineSeparator() + 
+    " * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;" + System.lineSeparator() + 
+    " * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND" + System.lineSeparator() + 
+    " * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT" + System.lineSeparator() + 
+    " * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS" + System.lineSeparator() + 
+    " * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.";
+    
     public RRuleParserPane( )
     {
         super();
@@ -163,40 +197,7 @@ public class RRuleParserPane extends AnchorPane
             }
         });
         
-        String text = "iCalendar RRule Parser Information" + System.lineSeparator()
-                + System.lineSeparator() +
-                "This software parses an iCalendar RRULE string into a series of date/times." + System.lineSeparator() +
-                "It uses iCalendarFX, an iCalendar API utilizing JavaFX and Java 8," + System.lineSeparator() +
-                "also written by David Bal" + System.lineSeparator() +
-                "See RFC 5545 iCalendar 3.3.10 for details" + System.lineSeparator()
-                + System.lineSeparator() + 
-                "Please direct any questions or comments to David Bal at dbal@balsoftware.org" + System.lineSeparator()
-                + System.lineSeparator() + 
-                " * Copyright (c) 2016, David Bal" + System.lineSeparator() + 
-                " * All rights reserved." + System.lineSeparator() + 
-                " * " + System.lineSeparator() + 
-                " * Redistribution and use in source and binary forms, with or without" + System.lineSeparator() + 
-                " * modification, are permitted provided that the following conditions are met:" + System.lineSeparator() + 
-                " *     * Redistributions of source code must retain the above copyright" + System.lineSeparator() + 
-                " *       notice, this list of conditions and the following disclaimer." + System.lineSeparator() + 
-                " *     * Redistributions in binary form must reproduce the above copyright" + System.lineSeparator() + 
-                " *       notice, this list of conditions and the following disclaimer in the" + System.lineSeparator() + 
-                " *       documentation and/or other materials provided with the distribution." + System.lineSeparator() + 
-                " *     * Neither the name of the organization nor the" + System.lineSeparator() + 
-                " *       names of its contributors may be used to endorse or promote products" + System.lineSeparator() + 
-                " *       derived from this software without specific prior written permission." + System.lineSeparator() + 
-                " * " + System.lineSeparator() + 
-                " * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND" + System.lineSeparator() + 
-                " * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED" + System.lineSeparator() + 
-                " * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE" + System.lineSeparator() + 
-                " * DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY" + System.lineSeparator() + 
-                " * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES" + System.lineSeparator() + 
-                " * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;" + System.lineSeparator() + 
-                " * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND" + System.lineSeparator() + 
-                " * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT" + System.lineSeparator() + 
-                " * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS" + System.lineSeparator() + 
-                " * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.";
-        Tooltip.install(myHyperlink, new Tooltip(text));
+        Tooltip.install(myHyperlink, new Tooltip(INFO));
     }
 
     private void calcRecurrences()
@@ -219,36 +220,7 @@ public class RRuleParserPane extends AnchorPane
     {
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.setTitle("RRule Parser Software Information");
-        alert.setHeaderText(
-                "Parses a iCalendar RRULE string into a series of date/times." + System.lineSeparator() +
-                "This software uses iCalendarFX, an iCalendar API utilizing JavaFX and Java 8," + System.lineSeparator() +
-                "also written by David Bal" + System.lineSeparator() +
-                "See RFC 5545 iCalendar 3.3.10 for details" + System.lineSeparator() + System.lineSeparator() + 
-                "Please direct any questions or comments to David Bal at dbal@balsoftware.org");
-        alert.setContentText(" * Copyright (c) 2016, David Bal" + System.lineSeparator() + 
-" * All rights reserved." + System.lineSeparator() + 
-" * " + System.lineSeparator() + 
-" * Redistribution and use in source and binary forms, with or without" + System.lineSeparator() + 
-" * modification, are permitted provided that the following conditions are met:" + System.lineSeparator() + 
-" *     * Redistributions of source code must retain the above copyright" + System.lineSeparator() + 
-" *       notice, this list of conditions and the following disclaimer." + System.lineSeparator() + 
-" *     * Redistributions in binary form must reproduce the above copyright" + System.lineSeparator() + 
-" *       notice, this list of conditions and the following disclaimer in the" + System.lineSeparator() + 
-" *       documentation and/or other materials provided with the distribution." + System.lineSeparator() + 
-" *     * Neither the name of the organization nor the" + System.lineSeparator() + 
-" *       names of its contributors may be used to endorse or promote products" + System.lineSeparator() + 
-" *       derived from this software without specific prior written permission." + System.lineSeparator() + 
-" * " + System.lineSeparator() + 
-" * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND" + System.lineSeparator() + 
-" * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED" + System.lineSeparator() + 
-" * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE" + System.lineSeparator() + 
-" * DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY" + System.lineSeparator() + 
-" * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES" + System.lineSeparator() + 
-" * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;" + System.lineSeparator() + 
-" * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND" + System.lineSeparator() + 
-" * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT" + System.lineSeparator() + 
-" * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS" + System.lineSeparator() + 
-" * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.");
+        alert.setHeaderText(INFO);
         alert.showAndWait();
     }
         
